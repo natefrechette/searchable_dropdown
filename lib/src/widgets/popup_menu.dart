@@ -8,7 +8,10 @@ Future<T?> showCustomMenu<T>({
   required RelativeRect position,
   required Widget child,
 }) {
-  final NavigatorState navigator = Navigator.of(context);
+  final NavigatorState navigator = Navigator.of(
+    context,
+    rootNavigator: menuModeProps.useRootNavigator,
+  );
   return navigator.push(
     _PopupMenuRoute<T>(
       context: context,
